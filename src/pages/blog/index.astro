@@ -2,7 +2,7 @@
 import BaseHead from "../../components/BaseHead.astro"
 // import Header from "../../components/Header.astro"
 import Header from "../../components/HeaderGruvbox.astro"
-import Footer from "../../components/Footer.astro"
+// import Footer from "../../components/Footer.astro"
 import { SITE_TITLE, SITE_DESCRIPTION } from "../../consts"
 import { getCollection } from "astro:content"
 import FormattedDate from "../../components/FormattedDate.astro"
@@ -17,7 +17,7 @@ const posts = (await getCollection("blog")).sort(
   <head>
     <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
   </head>
-  <body>
+  <body class="max-w-4xl mx-auto min-h-screen px-6 sm:px-8 bg-[#1d2021]">
     <div class="flex flex-col min-h-[100dvh] bg-[#1d2021] text-[#ebdbb2]">
       <Header />
       <main class="flex-1 py-8 px-6">
@@ -70,15 +70,15 @@ const posts = (await getCollection("blog")).sort(
       <footer class="py-4 px-6 border-t border-[#3c3836]">
         <div class="container mx-auto flex items-center justify-between">
           <p class="text-sm text-[#928374]">
-            © 2024 My Blog. All rights reserved.
+            © 2024 ecbfdevs. All rights reserved.
           </p>
-          <nav class="flex items-center space-x-4">
-            <a class="hover:text-[#d79921]" href="#"> Privacy </a>
-            <a class="hover:text-[#d79921]" href="#"> Terms </a>
-          </nav>
+          <!-- <nav class="flex items-center space-x-4"> -->
+          <!--   <a class="hover:text-[#d79921]" href="#"> Privacy </a> -->
+          <!--   <a class="hover:text-[#d79921]" href="#"> Terms </a> -->
+          <!-- </nav> -->
         </div>
       </footer>
-      <Footer />
+      <!-- <Footer /> -->
     </div>
   </body>
 </html>
