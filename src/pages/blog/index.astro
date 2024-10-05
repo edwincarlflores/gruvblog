@@ -17,10 +17,10 @@ const posts = (await getCollection("blog")).sort(
   <head>
     <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
   </head>
-  <body class="max-w-4xl mx-auto min-h-screen px-6 sm:px-8 bg-[#1d2021]">
+  <body class="max-w-3xl mx-auto min-h-screen px-6 sm:px-8 bg-[#1d2021]">
     <div class="flex flex-col min-h-[100dvh] bg-[#1d2021] text-[#ebdbb2]">
       <Header />
-      <main class="flex-1 py-8 px-6">
+      <main class="flex-1 py-8">
         <div class="container mx-auto grid gap-8">
           <article class="bg-[#3c3836] rounded-lg shadow-lg overflow-hidden">
             <div class="p-6">
@@ -68,11 +68,10 @@ const posts = (await getCollection("blog")).sort(
       <!--     <p class="text-sm text-[#928374]"> -->
       <!--       © 2024 ecbfdevs. All rights reserved. -->
       <!--     </p> -->
-      <!--     <!-- <nav class="flex items-center space-x-4"> --> -->
-      <!--     <!--   <a class="hover:text-[#d79921]" href="#"> Privacy </a> -->
-      -->
-      <!--     <!--   <a class="hover:text-[#d79921]" href="#"> Terms </a> --> -->
-      <!--     <!-- </nav> --> -->
+      <!-- <nav class="flex items-center space-x-4"> -->
+      <!--   <a class="hover:text-[#d79921]" href="#"> Privacy </a> -->
+      <!--   <a class="hover:text-[#d79921]" href="#"> Terms </a> -->
+      <!-- </nav> -->
       <!--   </div> -->
       <!-- </footer> -->
       <!-- <Footer /> -->

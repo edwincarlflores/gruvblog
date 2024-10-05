@@ -31,6 +31,9 @@
   --chart-5: 27 87% 67%;
   --radius: 0.5rem;
   font-size: 1.0625em;
+  line-height: 1.9;
+  line-height: 2;
+  scroll-behavior: smooth;
 }
 img[src="/placeholder.svg"],
 img[src="/placeholder-user.jpg"] {
