@@ -1,6 +1,6 @@
 ---
 import BaseHead from "../components/BaseHead.astro"
-import Header from "../components/Header.astro"
+import Header from "../components/HeaderGruvbox.astro"
 import Footer from "../components/Footer.astro"
 import { SITE_TITLE, SITE_DESCRIPTION } from "../consts"
 ---
@@ -10,55 +10,71 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts"
   <head>
     <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
   </head>
-  <body>
-    <Header />
-    <main>
-      <h1>🧑‍🚀 Hello, Astronaut!</h1>
-      <p>
-        Welcome to the official <a href="https://astro.build/">Astro</a> blog starter
-        template. This template serves as a lightweight, minimally-styled starting
-        point for anyone looking to build a personal website, blog, or portfolio
-        with Astro.
-      </p>
-      <p>
-        This template comes with a few integrations already configured in your
-        <code>astro.config.mjs</code> file. You can customize your setup with
-        <a href="https://astro.build/integrations">Astro Integrations</a> to add
-        tools like Tailwind, React, or Vue to your project.
-      </p>
-      <p>Here are a few ideas on how to get started with the template:</p>
-      <ul>
-        <li>Edit this page in <code>src/pages/index.astro</code></li>
-        <li>
-          Edit the site header items in <code>src/components/Header.astro</code>
-        </li>
-        <li>
-          Add your name to the footer in <code>src/components/Footer.astro</code
-          >
-        </li>
-        <li>
-          Check out the included blog posts in <code>src/content/blog/</code>
-        </li>
-        <li>
-          Customize the blog post page layout in <code
-            >src/layouts/BlogPost.astro</code
-          >
-        </li>
-      </ul>
-      <p>
-        Have fun! If you get stuck, remember to <a
-          href="https://docs.astro.build/"
-          >read the docs
-        </a> or <a href="https://astro.build/chat">join us on Discord</a> to ask
-        questions.
-      </p>
-      <p>
-        Looking for a blog template with a bit more personality? Check out <a
-          href="https://github.com/Charca/astro-blog-template"
-          >astro-blog-template
-        </a> by <a href="https://twitter.com/Charca">Maxi Ferreira</a>.
-      </p>
-    </main>
-    <Footer />
+  <body class="max-w-4xl mx-auto min-h-screen px-6 sm:px-8 bg-[#1d2021]">
+    <div class="flex flex-col min-h-[100dvh] bg-[#1d2021] text-[#ebdbb2]">
+      <!-- <body> -->
+      <Header />
+      <main class="py-12 px-4 md:px-8">
+        <article class="prose prose-invert max-w-[800px] mx-auto">
+          <h1 class="text-3xl font-bold pb-6">Hi I'm Ed 👋</h1>
+          <!-- <div class="text-sm text-[#928374] mt-2"> -->
+          <!-- <span>By John Doe</span> -->
+          <!-- <span class="mx-2">•</span> -->
+          <!-- <span>October 6, 2024</span> -->
+          <!-- </div> -->
+          <!-- <p> -->
+          <!--   In a world filled with constant distractions and overwhelming -->
+          <!--   complexity, the beauty of simplicity shines through. This blog post -->
+          <!--   explores the power of minimalism and how it can transform our lives, -->
+          <!--   both in the digital and physical realms. -->
+          <!-- </p> -->
+          <!-- <p> -->
+          <!--   Simplicity is not about deprivation or austerity, but rather about -->
+          <!--   focusing on what truly matters. It's about stripping away the -->
+          <!--   unnecessary and embracing the essential. When we declutter our -->
+          <!--   lives, both physically and mentally, we create space for what really -->
+          <!--   matters – our relationships, our passions, and our well-being. -->
+          <!-- </p> -->
+          <!-- <p> -->
+          <!--   In the digital realm, simplicity can be found in the design of -->
+          <!--   websites, apps, and user interfaces. By prioritizing clarity, -->
+          <!--   readability, and a clean aesthetic, we can create experiences that -->
+          <!--   are intuitive and enjoyable. This not only enhances the user -->
+          <!--   experience but also fosters a sense of focus and calm. -->
+          <!-- </p> -->
+          <!-- <p> -->
+          <!--   Embracing simplicity is a journey, not a destination. It's about -->
+          <!--   continuously evaluating our priorities and making conscious choices -->
+          <!--   to eliminate the clutter that weighs us down. By doing so, we can -->
+          <!--   unlock a newfound sense of freedom, creativity, and fulfillment. -->
+          <!-- </p> -->
+          <!-- <p> -->
+          <!--   So, let us celebrate the beauty of simplicity and let it guide us -->
+          <!--   towards a more intentional, focused, and meaningful life. -->
+          <!-- </p> -->
+          <div>
+            <p class="mb-8">
+              A full-stack developer with passion for web and tech. This is my
+              personal blog site where I share my learnings, hefty tricks and
+              pitfalls as I encounter them on my software development journey.
+            </p>
+            <p class="mb-8">
+              I like to think of this as my journal where I share what excites
+              me and frustrates me while developing applications. I also love
+              trying out new frameworks and tech stacks and it would be fun to
+              share my experience with the community.
+            </p>
+          </div>
+        </article>
+      </main>
+      <!-- <Footer /> -->
+      <footer class="py-4 px-6 border-t border-[#3c3836]">
+        <div class="container mx-auto flex items-center justify-between">
+          <p class="text-sm text-[#928374]">
+            © 2024 ecbfdevs. All rights reserved.
+          </p>
+        </div>
+      </footer>
+    </div>
   </body>
 </html>

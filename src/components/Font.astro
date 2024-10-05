@@ -1,5 +1,23 @@
 ---
+/*
+  This is not a layout but just a component that's used in page layouts.
+  Easiest way to use a Google font is to embed it as a <link>. But we're
+  gonna load fonts the fastest way.
 
+  Here's the formula for best font load performance.
+  1. Serve from same origin as woff/woff2
+  2. Load font @font-face definitions as inline styles in page <head>
+  3. Preload the same origin font URLs
+
+  Hosting providers like Netlify/Vercel automatically cache your
+  public assets (fonts) and serve from their CDN closest to the users.
+
+  Read more here to understand font load performance
+  https://sia.codes/posts/making-google-fonts-faster
+
+  woff/woff2 assets downloaded using google-webfonts-helper:
+  https://gwfh.mranftl.com/fonts/roboto-mono?subsets=latin
+*/
 ---
 
 <!-- 
