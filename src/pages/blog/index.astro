@@ -1,0 +1,134 @@
+---
+import BaseHead from "../../components/BaseHead.astro"
+// import Header from "../../components/Header.astro"
+import Header from "../../components/HeaderGruvbox.astro"
+import Footer from "../../components/Footer.astro"
+import { SITE_TITLE, SITE_DESCRIPTION } from "../../consts"
+import { getCollection } from "astro:content"
+import FormattedDate from "../../components/FormattedDate.astro"
+
+const posts = (await getCollection("blog")).sort(
+  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
+)
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+    <style>
+      :root {
+        --background: 0 0% 100%;
+        --foreground: 240 10% 3.9%;
+        --card: 0 0% 100%;
+        --card-foreground: 240 10% 3.9%;
+        --popover: 0 0% 100%;
+        --popover-foreground: 240 10% 3.9%;
+        --primary: 240 5.9% 10%;
+        --primary-foreground: 0 0% 98%;
+        --secondary: 240 4.8% 95.9%;
+        --secondary-foreground: 240 5.9% 10%;
+        --muted: 240 4.8% 95.9%;
+        --muted-foreground: 240 3.8% 45%;
+        --accent: 240 4.8% 95.9%;
+        --accent-foreground: 240 5.9% 10%;
+        --destructive: 0 72% 51%;
+        --destructive-foreground: 0 0% 98%;
+        --border: 240 5.9% 90%;
+        --input: 240 5.9% 90%;
+        --ring: 240 5.9% 10%;
+        --chart-1: 173 58% 39%;
+        --chart-2: 12 76% 61%;
+        --chart-3: 197 37% 24%;
+        --chart-4: 43 74% 66%;
+        --chart-5: 27 87% 67%;
+        --radius: 0.5rem;
+      }
+      img[src="/placeholder.svg"],
+      img[src="/placeholder-user.jpg"] {
+        filter: sepia(0.3) hue-rotate(-60deg) saturate(0.5) opacity(0.8);
+      }
+    </style>
+    <style>
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        font-family: "Inter", sans-serif;
+        --font-sans-serif: "Inter";
+      }
+    </style>
+    <style>
+      body {
+        font-family: "Inter", sans-serif;
+        --font-sans-serif: "Inter";
+      }
+    </style>
+  </head>
+  <body>
+    <div class="flex flex-col min-h-[100dvh] bg-[#1d2021] text-[#ebdbb2]">
+      <Header />
+      <main class="flex-1 py-8 px-6">
+        <div class="container mx-auto grid gap-8">
+          <article class="bg-[#3c3836] rounded-lg shadow-lg overflow-hidden">
+            <div class="p-6">
+              <h2 class="text-2xl font-bold mb-2">
+                The Joys of Gruvbox Coding
+              </h2>
+              <p class="text-sm text-[#928374] mb-4">
+                Published on April 15, 2023
+              </p>
+              <p class="leading-relaxed">
+                Gruvbox is a beautiful and soothing color scheme that makes
+                coding a true pleasure. With its warm, earthy tones and
+                carefully balanced contrasts, Gruvbox creates an environment
+                that is easy on the eyes and conducive to focused work.olor
+                scheme that makes coding a true pleasure. With its warm, earthy
+                tones and
+              </p>
+              <p class="leading-relaxed">
+                Whether you're working on a complex project or just tinkering
+                with a personal side-project, Gruvbox's calming palette can help
+                you stay productive and engaged throughout the day.
+              </p>
+            </div>
+          </article>
+          <article class="bg-[#3c3836] rounded-lg shadow-lg overflow-hidden">
+            <div class="p-6">
+              <h2 class="text-2xl font-bold mb-2">
+                Mastering the Art of Markdown
+              </h2>
+              <p class="text-sm text-[#928374] mb-4">
+                Published on March 28, 2023
+              </p>
+              <p class="leading-relaxed">
+                Markdown is a lightweight markup language that has become
+                increasingly popular among developers, writers, and content
+                creators. With its simple syntax and
+              </p>
+              <p class="leading-relaxed">
+                In this post, we'll explore the basics of Markdown and
+                demonstrate how you can use it to streamline your writing
+                workflow an
+              </p>
+            </div>
+          </article>
+        </div>
+      </main>
+      <footer class="py-4 px-6 border-t border-[#3c3836]">
+        <div class="container mx-auto flex items-center justify-between">
+          <p class="text-sm text-[#928374]">
+            © 2024 My Blog. All rights reserved.
+          </p>
+          <nav class="flex items-center space-x-4">
+            <a class="hover:text-[#d79921]" href="#"> Privacy </a>
+            <a class="hover:text-[#d79921]" href="#"> Terms </a>
+          </nav>
+        </div>
+      </footer>
+      <Footer />
+    </div>
+  </body>
+</html>
