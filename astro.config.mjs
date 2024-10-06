@@ -12,8 +12,7 @@ export default defineConfig({
   integrations: [mdx(), sitemap(), tailwind()],
   markdown: {
     shikiConfig: {
-      theme: "vitesse-black",
+      theme: "everforest-dark",
     },
   },
 })
-
