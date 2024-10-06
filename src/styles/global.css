@@ -56,3 +56,37 @@ body {
   /* font-family: "Inter", sans-serif; */
   /* --font-sans-serif: "Inter"; */
 }
+
+/* ------ REUSABLE UTILS - START ------ */
+.animated-link {
+  position: relative;
+  box-decoration-break: clone;
+  text-decoration: none;
+}
+
+.animated-link:hover:after {
+  transform: translateZ(0) scale(1);
+}
+
+.animated-link:after {
+  left: 0;
+  right: 0;
+  bottom: -3px;
+  content: "";
+  height: 2px;
+  position: absolute;
+  transform: translateZ(0) scaleX(0);
+  transform-origin: left center;
+  transition: all 0.15s ease-in-out;
+  background-image: linear-gradient(
+    to right,
+    theme("colors.text.link"),
+    theme("colors.text.link")
+  );
+}
+
+.animated-link.show:after {
+  transform: translateZ(0) scale(1);
+}
+
+/* ------ REUSABLE UTILS - END ------ */

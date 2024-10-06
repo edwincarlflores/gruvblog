@@ -7,6 +7,11 @@ export default {
         body: ["Roboto Mono", "sans-serif"],
         heading: ["Roboto Mono", "sans-serif"],
       },
+      colors: {
+        text: {
+          link: "#7daea3",
+        },
+      },
     },
   },
   plugins: [],
