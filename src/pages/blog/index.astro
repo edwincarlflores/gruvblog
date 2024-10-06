@@ -1,15 +1,13 @@
 ---
 import BaseHead from "../../components/BaseHead.astro"
-// import Header from "../../components/Header.astro"
 import Header from "../../components/HeaderGruvbox.astro"
-// import Footer from "../../components/Footer.astro"
 import { SITE_TITLE, SITE_DESCRIPTION } from "../../consts"
 import { getCollection } from "astro:content"
-import FormattedDate from "../../components/FormattedDate.astro"
+import BlogPostListItem from "../../components/BlogPostListItem.astro"
 
-const posts = (await getCollection("blog")).sort(
-  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
-)
+const posts = (await getCollection("blog"))
+  .filter((post) => post.data.isPublished)
+  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
 ---
 
 <!doctype html>
@@ -22,59 +20,18 @@ const posts = (await getCollection("blog")).sort(
       <Header />
       <main class="flex-1 py-8">
         <div class="container mx-auto grid gap-8">
-          <article class="bg-[#3c3836] rounded-lg shadow-lg overflow-hidden">
-            <div class="p-6">
-              <h2 class="text-2xl font-bold mb-2">
-                The Joys of Gruvbox Coding
-              </h2>
-              <p class="text-sm text-[#928374] mb-4">October 6, 2024</p>
-              <p class="leading-relaxed">
-                Gruvbox is a beautiful and soothing color scheme that makes
-                coding a true pleasure. With its warm, earthy tones and
-                carefully balanced contrasts, Gruvbox creates an environment
-                that is easy on the eyes and conducive to focused work.olor
-                scheme that makes coding a true pleasure. With its warm, earthy
-                tones and
-              </p>
-              <p class="leading-relaxed">
-                Whether you're working on a complex project or just tinkering
-                with a personal side-project, Gruvbox's calming palette can help
-                you stay productive and engaged throughout the day.
-              </p>
-            </div>
-          </article>
-          <article class="bg-[#3c3836] rounded-lg shadow-lg overflow-hidden">
-            <div class="p-6">
-              <h2 class="text-2xl font-bold mb-2">
-                Mastering the Art of Markdown
-              </h2>
-              <p class="text-sm text-[#928374] mb-4">October 6, 2024</p>
-              <p class="leading-relaxed">
-                Markdown is a lightweight markup language that has become
-                increasingly popular among developers, writers, and content
-                creators. With its simple syntax and
-              </p>
-              <p class="leading-relaxed">
-                In this post, we'll explore the basics of Markdown and
-                demonstrate how you can use it to streamline your writing
-                workflow an
-              </p>
-            </div>
-          </article>
+          {
+            posts.map((post) => (
+              <BlogPostListItem
+                slug={post.slug}
+                title={post.data.title}
+                date={post.data.pubDate}
+                synopsis={post.data.synopsis}
+              />
+            ))
+          }
         </div>
       </main>
-      <!-- <footer class="py-4 px-6 border-t border-[#3c3836]"> -->
-      <!--   <div class="container mx-auto flex items-center justify-between"> -->
-      <!--     <p class="text-sm text-[#928374]"> -->
-      <!--       © 2024 ecbfdevs. All rights reserved. -->
-      <!--     </p> -->
-      <!-- <nav class="flex items-center space-x-4"> -->
-      <!--   <a class="hover:text-[#d79921]" href="#"> Privacy </a> -->
-      <!--   <a class="hover:text-[#d79921]" href="#"> Terms </a> -->
-      <!-- </nav> -->
-      <!--   </div> -->
-      <!-- </footer> -->
-      <!-- <Footer /> -->
     </div>
   </body>
 </html>

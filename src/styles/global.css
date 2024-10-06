@@ -151,6 +151,10 @@ a:not(.unset):hover {
   color: theme("colors.text.link");
 }
 
+article.blog-post-list-item:hover {
+  background-color: theme("colors.text.link");
+}
+
 p {
   margin-bottom: 1em;
 }
@@ -222,4 +226,8 @@ hr {
   clip-path: inset(50%);
   /* added line to stop words getting smushed together (as they go onto separate lines and some screen readers do not understand line feeds as a space */
   white-space: nowrap;
+}
+
+p.synopsis-item {
+  margin-bottom: 0 !important;
 }
