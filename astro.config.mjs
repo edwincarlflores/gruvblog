@@ -11,6 +11,7 @@ export default defineConfig({
   integrations: [mdx(), sitemap(), tailwind()],
   markdown: {
     shikiConfig: {
+      // @ts-ignore
       theme: gruvboxMaterialDarkTheme,
     },
   },
