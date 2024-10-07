@@ -4,11 +4,11 @@ import FormattedDate from "../components/FormattedDate.astro"
 interface Props {
   slug: string
   title: string
+  description: string
   date: Date
-  synopsis: string
 }
 
-const { slug, title, date, synopsis } = Astro.props
+const { slug, title, date, description } = Astro.props
 ---
 
 <a href={`/blog/${slug}/`} class="unset">
@@ -21,8 +21,8 @@ const { slug, title, date, synopsis } = Astro.props
         <FormattedDate date={date} />
       </p>
       {
-        Boolean(synopsis) && (
-          <p class="leading-relaxed synopsis-item">{synopsis}</p>
+        Boolean(description) && (
+          <p class="leading-relaxed blog-list-item-desc">{description}</p>
         )
       }
     </div>
