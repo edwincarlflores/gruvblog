@@ -231,3 +231,7 @@ hr {
 p.blog-list-item-desc {
   margin-bottom: 0 !important;
 }
+
+h1.blog-post-title-heading {
+  margin-bottom: 0 !important;
+}
